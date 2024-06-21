@@ -1,11 +1,13 @@
 package quoters;
 
 import jakarta.annotation.PostConstruct;
+import quoters.annotations.DeprecatedClass;
 import quoters.annotations.InjectRandomInt;
 import quoters.annotations.PostProxy;
 import quoters.annotations.Profiling;
 
 @Profiling
+@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
     @InjectRandomInt(min = 2, max = 7)
@@ -34,5 +36,9 @@ public class TerminatorQuoter implements Quoter {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public void setRepeat(int repeat) {
+        this.repeat = repeat;
     }
 }

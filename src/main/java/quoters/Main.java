@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("context.xml");
+        classPathXmlApplicationContext.getBean(Quoter.class).sayQuote();
     }
 
 }
